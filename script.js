@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const calendarFrame = document.getElementById('9wykaauGoGEKjktBHqWB_1756659224336');
     if (calendarFrame) {
         calendarFrame.addEventListener('load', function() {
-            console.log('Calendar loaded successfully');
+            // Calendar loaded successfully
         });
     }
 
@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Log engagement when user leaves (optional analytics)
     window.addEventListener('beforeunload', function() {
-        console.log('Max scroll depth:', Math.round(maxScroll) + '%');
+        // Track max scroll depth: Math.round(maxScroll) + '%'
     });
 });
