@@ -195,6 +195,13 @@ html, body {
     line-height: 1.6;
 }
 
+/* Calendar Section */
+.calendar-section {
+    padding: 4rem 0;
+    background: white;
+    text-align: center;
+}
+
 /* CTA Section */
 .cta {
     padding: 4rem 0;
