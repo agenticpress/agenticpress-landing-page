@@ -7,7 +7,7 @@ packages = ["static-web-server"]
 
 [deployment]
 deploymentTarget = "static"
-publicDir = "."
+publicDir = "/"
 build = "echo 'Static site ready'"
 
 [[deployment.rewrites]]
