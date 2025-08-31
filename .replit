@@ -6,8 +6,8 @@ channel = "stable-24_11"
 packages = ["static-web-server"]
 
 [deployment]
-deploymentTarget = "cloudrun"
-run = ["sh", "-c", "/"]
+publicDir = "/"
+deploymentTarget = "static"
 
 [workflows]
 runButton = "Serve static"
@@ -28,44 +28,3 @@ waitForPort = 80
 [[ports]]
 localPort = 80
 externalPort = 80
-[deployment]
-deploymentTarget = "static"
-publicDir = "./"
-
-[[deployment.rewrites]]
-from = "/*"
-to = "/index.html"
-
-[[deployment.responseHeaders]]
-path = "/*"
-name = "Cache-Control"
-value = "public, max-age=3600"
-
-[[deployment.responseHeaders]]
-path = "/*.html"
-name = "Cache-Control"
-value = "no-cache"
-
-[workflows.run]
-run = "echo \"Serving HTML, open the Preview to see your output.\" && static-web-server -w ./.config/static-web-server.toml > /dev/null 2>&1"
-
-[nix]
-channel = "stable-24_05"
-
-[gitHubImport]
-requiredFiles = [".replit", "replit.nix"]
-
-[languages.html]
-pattern = "**/*.html"
-[languages.html.languageServer]
-start = "vscode-html-language-server --stdio"
-
-[languages.css]
-pattern = "**/*.css"
-[languages.css.languageServer]
-start = "vscode-css-language-server --stdio"
-
-[languages.javascript]
-pattern = "**/*.js"
-[languages.javascript.languageServer]
-start = "typescript-language-server --stdio"
