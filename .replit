@@ -8,7 +8,10 @@ packages = ["static-web-server"]
 [deployment]
 publicDir = "/"
 deploymentTarget = "static"
-run = ["sh", "-c", "static-web-server -p 80 -d . --page-fallback index.html"]
+
+[[deployment.rewrites]]
+from = "/*"
+to = "index.html"
 
 [workflows]
 runButton = "Serve static"
