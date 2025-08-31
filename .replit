@@ -7,7 +7,7 @@ packages = ["static-web-server"]
 
 [deployment]
 deploymentTarget = "static"
-publicDir = "/"
+publicDir = "."
 build = "echo 'Static site ready'"
 
 [[deployment.rewrites]]
@@ -30,6 +30,4 @@ Console logs are available in the Preview devtools or your browser devtools.\" &
 """
 waitForPort = 80
 
-[[ports]]
-localPort = 80
-externalPort = 80
+
