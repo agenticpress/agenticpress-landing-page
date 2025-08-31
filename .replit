@@ -9,10 +9,6 @@ packages = ["static-web-server"]
 publicDir = "./"
 deploymentTarget = "static"
 
-[[deployment.rewrites]]
-from = "/*"
-to = "index.html"
-
 [workflows]
 runButton = "Serve static"
 
