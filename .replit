@@ -6,9 +6,9 @@ channel = "stable-24_11"
 packages = ["static-web-server"]
 
 [deployment]
-build = "echo 'Static site ready'"
-publicDir = "."
 deploymentTarget = "static"
+publicDir = "."
+build = "echo 'Static site ready'"
 
 [[deployment.rewrites]]
 from = "/*"
