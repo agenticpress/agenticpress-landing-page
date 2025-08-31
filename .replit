@@ -6,8 +6,12 @@ channel = "stable-24_11"
 packages = ["static-web-server"]
 
 [deployment]
-publicDir = "/"
+publicDir = "./"
 deploymentTarget = "static"
+
+[[deployment.rewrites]]
+from = "/*"
+to = "/index.html"
 
 [workflows]
 runButton = "Serve static"
